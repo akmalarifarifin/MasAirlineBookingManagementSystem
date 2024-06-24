@@ -11,6 +11,7 @@ public class MasAirlineBookingManagementSystemApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MasAirlineBookingManagementSystemApplication.class, args);
 		//loqmantesttest
+		//comment2
 	}
 
 }
