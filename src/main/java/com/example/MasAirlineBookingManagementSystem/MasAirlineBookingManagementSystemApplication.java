@@ -9,3 +9,5 @@ public class MasAirlineBookingManagementSystemApplication {
 		SpringApplication.run(MasAirlineBookingManagementSystemApplication.class, args);
 	}
 }
+
+// ayuh pass exam
