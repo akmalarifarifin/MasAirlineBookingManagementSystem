@@ -6,6 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class MasAirlineBookingManagementSystemApplication {
 
+	//testing msater
+
 	public static void main(String[] args) {
 		SpringApplication.run(MasAirlineBookingManagementSystemApplication.class, args);
 	}
