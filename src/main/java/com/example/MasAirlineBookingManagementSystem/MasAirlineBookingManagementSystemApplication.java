@@ -12,6 +12,7 @@ public class MasAirlineBookingManagementSystemApplication {
 		SpringApplication.run(MasAirlineBookingManagementSystemApplication.class, args);
 		//loqmantesttest
 		//comment2
+		//test akmalassds after commit
 	}
 
 }
