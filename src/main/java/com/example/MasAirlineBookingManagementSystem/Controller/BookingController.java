@@ -1,4 +1,4 @@
-package com.example.MasAirlineBookingManagementSystem.controller;
+package com.example.MasAirlineBookingManagementSystem.Controller;
 
 public class BookingController {
 
