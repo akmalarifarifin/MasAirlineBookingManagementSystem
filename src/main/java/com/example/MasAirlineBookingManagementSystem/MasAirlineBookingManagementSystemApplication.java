@@ -5,11 +5,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class MasAirlineBookingManagementSystemApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(MasAirlineBookingManagementSystemApplication.class, args);
 		//test akmal branchg
 		//tsetingl laaa
 	}
-
 }
+
+// ayuh pass exam
+//test merge to famell
+//loqman comment
