@@ -1,6 +1,7 @@
 package com.example.MasAirlineBookingManagementSystem.Controller;
 
 import com.example.MasAirlineBookingManagementSystem.Model.Booking;
+import com.example.MasAirlineBookingManagementSystem.Service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +16,7 @@ public class BookingController {
 
     @GetMapping
     public List<Booking> getAllBooking(){
-        return bookingService.getAllBooking();
+        return bookingService.getAllBookings();
     }
 
     @GetMapping("/{id}")
