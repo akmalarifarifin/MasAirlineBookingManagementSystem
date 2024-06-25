@@ -11,7 +11,7 @@ import java.util.List;
 public class BookingController {
 
     @Autowired
-//    private BookingService bookingService;
+    private BookingService bookingService;
 
     @GetMapping
     public List<Booking> getAllBooking(){
@@ -37,7 +37,6 @@ public class BookingController {
     public void deleteBooking(@PathVariable("id") Long id){
         bookingService.deleteBooking(id);
     }
-
 
 
 }
