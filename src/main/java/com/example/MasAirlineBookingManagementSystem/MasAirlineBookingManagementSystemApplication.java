@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MasAirlineBookingManagementSystemApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MasAirlineBookingManagementSystemApplication.class, args);
+		//test akmal branchg
+		//tsetingl laaa
 	}
 }
 
