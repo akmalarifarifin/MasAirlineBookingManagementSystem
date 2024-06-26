@@ -1,6 +1,7 @@
 package com.example.MasAirlineBookingManagementSystem.Controller;
 
 import com.example.MasAirlineBookingManagementSystem.Model.Booking;
+import com.example.MasAirlineBookingManagementSystem.Service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,11 +12,11 @@ import java.util.List;
 public class BookingController {
 
     @Autowired
-//    private BookingService bookingService;
+    private BookingService bookingService;
 
     @GetMapping
     public List<Booking> getAllBooking(){
-        return bookingService.getAllBooking();
+        return bookingService.getAllBookings();
     }
 
     @GetMapping("/{id}")
@@ -29,7 +30,7 @@ public class BookingController {
     }
 
     @PutMapping("/{id}")
-    public Booking updateBooking(@PathVariable("id") Long id, @RequestBody Booking booking){
+    public Booking updateBooking(@PathVariable Long id, @RequestBody Booking booking) {
         return bookingService.updateBooking(id, booking);
     }
 
@@ -37,7 +38,6 @@ public class BookingController {
     public void deleteBooking(@PathVariable("id") Long id){
         bookingService.deleteBooking(id);
     }
-
 
 
 }
