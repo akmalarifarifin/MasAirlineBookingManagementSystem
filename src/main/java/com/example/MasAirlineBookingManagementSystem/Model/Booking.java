@@ -1,71 +1,27 @@
 package com.example.MasAirlineBookingManagementSystem.Model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDateTime;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
 public class Booking {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long flightId;
     private Long userId;
     private LocalDateTime bookingDate;
-    private String status; // e.g., CONFIRMED, CANCELLED
+    private String status; // CONFIRMED, CANCELLED
     private String seatNumber; // e.g., 12A, 14C
     private boolean isAisleSeat;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public boolean isAisleSeat() {
-        return isAisleSeat;
-    }
-
-    public void setAisleSeat(boolean aisleSeat) {
-        isAisleSeat = aisleSeat;
-    }
-
-    public String getSeatNumber() {
-        return seatNumber;
-    }
-
-    public void setSeatNumber(String seatNumber) {
-        this.seatNumber = seatNumber;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public LocalDateTime getBookingDate() {
-        return bookingDate;
-    }
-
-    public void setBookingDate(LocalDateTime bookingDate) {
-        this.bookingDate = bookingDate;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public Long getFlightId() {
-        return flightId;
-    }
-
-    public void setFlightId(Long flightId) {
-        this.flightId = flightId;
-    }
 }

@@ -8,24 +8,24 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/booking")
+@RequestMapping("/bookings")
 public class BookingController {
 
     @Autowired
     private BookingService bookingService;
 
     @GetMapping
-    public List<Booking> getAllBooking(){
+    public List<Booking> getAllBookings() {
         return bookingService.getAllBookings();
     }
 
     @GetMapping("/{id}")
-    public Booking getBookingById(@PathVariable("id") Long id){
+    public Booking getBookingById(@PathVariable Long id) {
         return bookingService.getBookingById(id);
     }
 
     @PostMapping
-    public Booking createBooking(@RequestBody Booking booking){
+    public Booking createBooking(@RequestBody Booking booking) {
         return bookingService.createBooking(booking);
     }
 
@@ -35,9 +35,7 @@ public class BookingController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteBooking(@PathVariable("id") Long id){
-        bookingService.deleteBooking(id);
+    public void cancelBooking(@PathVariable Long id) {
+        bookingService.cancelBooking(id);
     }
-
-
 }
