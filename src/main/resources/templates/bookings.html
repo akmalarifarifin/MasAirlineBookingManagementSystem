@@ -49,6 +49,7 @@
         <th>Status</th>
         <th>Seat Number</th>
         <th>Aisle Seat</th>
+        <th>Edit</th>
     </tr>
     </thead>
     <tbody>
@@ -60,6 +61,7 @@
         <td th:text="${booking.status}">CONFIRMED</td>
         <td th:text="${booking.seatNumber}">12A</td>
         <td th:text="${booking.isAisleSeat ? 'Yes' : 'No'}">Yes</td>
+        <td><a th:href="@{/web/bookings/{id}/edit(id=${booking.id})}">Edit</a></td>
     </tr>
     </tbody>
 </table>
