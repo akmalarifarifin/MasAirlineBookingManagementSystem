@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bookings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+<h1>Bookings</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Flight ID</th>
+        <th>User ID</th>
+        <th>Booking Date</th>
+        <th>Status</th>
+        <th>Seat Number</th>
+        <th>Aisle Seat</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="booking : ${bookings}">
+        <td th:text="${booking.id}">1</td>
+        <td th:text="${booking.flightId}">1</td>
+        <td th:text="${booking.userId}">1</td>
+        <td th:text="${booking.bookingDate}">2024-07-01T10:00:00</td>
+        <td th:text="${booking.status}">CONFIRMED</td>
+        <td th:text="${booking.seatNumber}">12A</td>
+        <td th:text="${booking.isAisleSeat ? 'Yes' : 'No'}">Yes</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

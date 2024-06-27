@@ -6,19 +6,22 @@ import com.example.MasAirlineBookingManagementSystem.Repository.BookingRepositor
 import com.example.MasAirlineBookingManagementSystem.Repository.FlightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
+import org.springframework.web.bind.annotation.PostMapping;
 import java.util.List;
 import java.util.Random;
 
 @Service
 public class BookingService {
 
-    @Autowired
-    private BookingRepository bookingRepository;
+    private final BookingRepository bookingRepository;
+    private final FlightRepository flightRepository;
 
     @Autowired
-    private FlightRepository flightRepository;
+    public BookingService(BookingRepository bookingRepository, FlightRepository flightRepository) {
+        this.bookingRepository = bookingRepository;
+        this.flightRepository = flightRepository;
+    }
+
 
     public List<Booking> getAllBookings() {
         return bookingRepository.findAll();
@@ -28,16 +31,13 @@ public class BookingService {
         return bookingRepository.findById(id).orElse(null);
     }
 
+    @PostMapping
     public Booking createBooking(Booking booking) {
-        Flight flight = flightRepository.findById(booking.getFlightId()).orElse(null); // Notice the change here
-        if (flight != null && flight.getAvailableSeats() > 0) {
-            booking.setBookingDate(LocalDateTime.now());
-            booking.setSeatNumber(assignSeat(booking.isAisleSeat()));
-            flight.setAvailableSeats(flight.getAvailableSeats() - 1);
-            flightRepository.save(flight);
+        if (booking != null) {
             return bookingRepository.save(booking);
+        } else {
+            throw new IllegalArgumentException("Booking cannot be null");
         }
-        return null;
     }
 
     private String assignSeat(boolean isAisleSeat) {
