@@ -1,7 +1,9 @@
 package com.example.MasAirlineBookingManagementSystem.Controller;
 
 import com.example.MasAirlineBookingManagementSystem.Model.Booking;
+import com.example.MasAirlineBookingManagementSystem.Model.Flight;
 import com.example.MasAirlineBookingManagementSystem.Service.BookingService;
+import com.example.MasAirlineBookingManagementSystem.Service.FlightService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +19,9 @@ public class BookingWebController {
 
     @Autowired
     private BookingService bookingService;
+
+    @Autowired
+    private FlightService flightService;
 
     @GetMapping("/web/bookings")
     public String getAllBookings(Model model) {
@@ -50,5 +55,10 @@ public class BookingWebController {
         return "redirect:/web/bookings";
     }
 
-
+    @GetMapping("/home")
+    public String showHomePage(Model model) {
+        List<Flight> flights = flightService.getAllFlights();
+        model.addAttribute("flights", flights);
+        return "home";
+    }
 }

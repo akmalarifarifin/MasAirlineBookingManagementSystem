@@ -55,26 +55,26 @@ public class DataLoader {
     }
 
     private void loadUsers() {
-        userRepository.save(new User(null, "John Lee", "john@gmail.com", "password1"));
-        userRepository.save(new User(null, "Emily Chen", "emily@gmail.com", "password2"));
-        userRepository.save(new User(null, "Ahmed Khan", "ahmed@gmail.com", "password3"));
-        userRepository.save(new User(null, "Priya Patel", "priya@gmail.com", "password4"));
-        userRepository.save(new User(null, "Muhammad Ali", "ali@gmail.com", "password5"));
-        userRepository.save(new User(null, "Mei Lin", "mei@gmail.com", "password6"));
-        userRepository.save(new User(null, "Omar Abdullah", "omar@gmail.com", "password7"));
-        userRepository.save(new User(null, "Natasha Singh", "natasha@gmail.com", "password8"));
-        userRepository.save(new User(null, "David Nguyen", "david@gmail.com", "password9"));
-        userRepository.save(new User(null, "Aisha Rahman", "aisha@gmail.com", "password10"));
-        userRepository.save(new User(null, "Michael Kim", "michael@gmail.com", "password11"));
-        userRepository.save(new User(null, "Sana Ahmed", "sana@gmail.com", "password12"));
-        userRepository.save(new User(null, "Jason Tan", "jason@gmail.com", "password13"));
-        userRepository.save(new User(null, "Leila Mansour", "leila@gmail.com", "password14"));
-        userRepository.save(new User(null, "Ryan Wong", "ryan@gmail.com", "password15"));
-        userRepository.save(new User(null, "Fatima Abbas", "fatima@gmail.com", "password16"));
-        userRepository.save(new User(null, "Daniel Wu", "daniel@gmail.com", "password17"));
-        userRepository.save(new User(null, "Layla Said", "layla@gmail.com", "password18"));
-        userRepository.save(new User(null, "Peter Zhao", "peter@gmail.com", "password19"));
-        userRepository.save(new User(null, "Sarah Malik", "sarah@gmail.com", "password20"));
+        userRepository.save(new User(null, "John Lee", "john@gmail.com", "01234567890", "testpass"));
+        userRepository.save(new User(null, "Emily Chen", "emily@gmail.com", "01234567890", "testpass"));
+        userRepository.save(new User(null, "Ahmed Khan", "ahmed@gmail.com", "01234567890", "testpass"));
+        userRepository.save(new User(null, "Priya Patel", "priya@gmail.com","01234567890" ,"testpass"));
+        userRepository.save(new User(null, "Muhammad Ali", "ali@gmail.com", "01234567890", "testpass"));
+        userRepository.save(new User(null, "Mei Lin", "mei@gmail.com", "01234567890", "testpass"));
+        userRepository.save(new User(null, "Omar Abdullah", "omar@gmail.com", "01234567890", "testpass"));
+        userRepository.save(new User(null, "Natasha Singh", "natasha@gmail.com", "01234567890", "testpass"));
+        userRepository.save(new User(null, "David Nguyen", "david@gmail.com", "01234567890", "testpass"));
+        userRepository.save(new User(null, "Aisha Rahman", "aisha@gmail.com", "01234567890", "testpass"));
+        userRepository.save(new User(null, "Michael Kim", "michael@gmail.com", "01234567890", "testpass"));
+        userRepository.save(new User(null, "Sana Ahmed", "sana@gmail.com", "01234567890", "testpass"));
+        userRepository.save(new User(null, "Jason Tan", "jason@gmail.com", "01234567890", "testpass"));
+        userRepository.save(new User(null, "Leila Mansour", "leila@gmail.com", "01234567890", "testpass"));
+        userRepository.save(new User(null, "Ryan Wong", "ryan@gmail.com", "01234567890", "testpass"));
+        userRepository.save(new User(null, "Fatima Abbas", "fatima@gmail.com", "01234567890", "testpass"));
+        userRepository.save(new User(null, "Daniel Wu", "daniel@gmail.com", "01234567890", "testpass"));
+        userRepository.save(new User(null, "Layla Said", "layla@gmail.com", "01234567890", "testpass"));
+        userRepository.save(new User(null, "Peter Zhao", "peter@gmail.com", "01234567890", "testpass"));
+        userRepository.save(new User(null, "Sarah Malik", "sarah@gmail.com", "01234567890", "testpass"));
     }
 
     private void loadBookings() {
