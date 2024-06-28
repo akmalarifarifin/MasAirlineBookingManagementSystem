@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4">
+<h1 class="text-4xl font-bold text-gray-800 mb-12">Welcome to Mas Booking Management System</h1>
+<div class="space-y-4 w-full max-w-sm">
+    <a href="/home" class="block w-full py-2 px-4 bg-blue-500 text-white text-center font-medium rounded-md shadow-sm border border-blue-500 hover:bg-blue-600 transition duration-200">
+        Pick a Flight
+    </a>
+    <a href="/web/bookings/new" class="block w-full py-2 px-4 bg-blue-500 text-white text-center font-medium rounded-md shadow-sm border border-blue-500 hover:bg-blue-600 transition duration-200">
+        Create Booking
+    </a>
+    <a href="/web/bookings" class="block w-full py-2 px-4 bg-blue-500 text-white text-center font-medium rounded-md shadow-sm border border-blue-500 hover:bg-blue-600 transition duration-200">
+        Edit Booking
+    </a>
+</div>
+
+</body>
+</html>
