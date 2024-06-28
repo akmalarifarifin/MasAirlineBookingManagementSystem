@@ -61,4 +61,9 @@ public class BookingWebController {
         model.addAttribute("flights", flights);
         return "home";
     }
+
+    @GetMapping("/main-page")
+    public String showMainPage() {
+        return "mainUserPage";
+    }
 }

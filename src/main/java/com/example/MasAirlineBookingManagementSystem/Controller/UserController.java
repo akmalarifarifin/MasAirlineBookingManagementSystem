@@ -57,7 +57,7 @@ public class UserController {
     public String registerUser(@ModelAttribute User user, Model model) {
         userService.createUser(user);
         model.addAttribute("success", true);
-        return "register";
+        return "login";
     }
 
     @GetMapping("/login")
@@ -70,7 +70,7 @@ public class UserController {
         User user = userService.getUserByEmailAndPassword(email, password);
         if (user != null) {
             session.setAttribute("user", user);
-            return "redirect:/home"; // Redirect to home page after successful login
+            return "redirect:/main-page"; // Redirect to home page after successful login
         } else {
             model.addAttribute("error", "Invalid email or password");
             return "login"; // Return to login page with error
@@ -83,4 +83,5 @@ public class UserController {
         session.invalidate();
         return "redirect:/login";
     }
+
 }
