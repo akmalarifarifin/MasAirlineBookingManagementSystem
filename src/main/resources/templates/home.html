@@ -35,7 +35,7 @@
                 <div>Available Seats: <span th:text="${flight.availableSeats}">Available Seats</span></div>
             </div>
         </div>
-        <a href="/web/bookings/new" class="block w-full py-2 px-4 bg-blue-500 text-white text-center font-medium rounded-md shadow-sm hover:bg-blue-600 transition duration-200">Create Booking</a>
+        <a th:href="@{/web/bookings/new(flightId=${flight.id})}" class="block w-full py-2 px-4 bg-blue-500 text-white text-center font-medium rounded-md shadow-sm hover:bg-blue-600 transition duration-200">Create Booking</a>
     </div>
 </div>
 </body>
