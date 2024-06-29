@@ -4,6 +4,7 @@ import com.example.MasAirlineBookingManagementSystem.Model.Flight;
 import com.example.MasAirlineBookingManagementSystem.Repository.FlightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -36,4 +37,15 @@ public class FlightService {
     public void deleteFlight(Long id) {
         flightRepository.deleteById(id);
     }
+
+    @PostMapping
+    public Flight createFlight(Flight flight) {
+        if (flight != null) {
+            return flightRepository.save(flight);
+        } else {
+            throw new IllegalArgumentException("Booking cannot be null");
+        }
+    }
+
+
 }
