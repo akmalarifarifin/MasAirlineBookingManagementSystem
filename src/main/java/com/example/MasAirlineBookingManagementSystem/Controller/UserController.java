@@ -88,5 +88,10 @@ public class UserController {
         return "redirect:/users/login"; // Redirect to the login page
     }
 
+    @GetMapping("/admin")
+    public String adminUser() {
+        return "mainAdminPage";
+    }
+
 
 }

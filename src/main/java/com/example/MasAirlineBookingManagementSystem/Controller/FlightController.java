@@ -58,6 +58,7 @@ public class FlightController {
     @PostMapping("/new")
     public String createFlight(@ModelAttribute Flight flight, Model model) {
         flightService.createFlight(flight);
+        //nnti linkkan ke flight list
         return "redirect:/flights/new";
     }
 
