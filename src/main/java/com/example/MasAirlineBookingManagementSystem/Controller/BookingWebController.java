@@ -73,4 +73,17 @@ public class BookingWebController {
         }
         return "mainUserPage";
     }
+
+    @GetMapping("/web/admin/bookings")
+    public String adminGetAllBookings(Model model) {
+        List<Booking> bookings = bookingService.getAllBookings();
+        model.addAttribute("bookings", bookings);
+        return "adminBooking";
+    }
+
+    @GetMapping("/web/booking/delete/{id}")
+    public String deleteBooking(@PathVariable Long id) {
+        bookingService.deleteBooking(id);
+        return "redirect:/web/admin/bookings";
+    }
 }

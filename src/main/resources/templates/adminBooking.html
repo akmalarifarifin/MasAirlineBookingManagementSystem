@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bookings</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-gray-100 p-6">
+<h1 class="text-3xl font-semibold text-gray-800 mb-6">Bookings</h1>
+<div class="overflow-x-auto">
+    <table class="min-w-full bg-white border border-gray-200">
+        <thead>
+        <tr class="bg-gray-100">
+            <th class="py-3 px-4 border-b text-left text-sm font-medium text-gray-700">ID</th>
+            <th class="py-3 px-4 border-b text-left text-sm font-medium text-gray-700">Flight ID</th>
+            <th class="py-3 px-4 border-b text-left text-sm font-medium text-gray-700">User ID</th>
+            <th class="py-3 px-4 border-b text-left text-sm font-medium text-gray-700">Booking Date</th>
+            <th class="py-3 px-4 border-b text-left text-sm font-medium text-gray-700">Status</th>
+            <th class="py-3 px-4 border-b text-left text-sm font-medium text-gray-700">Seat Number</th>
+            <th class="py-3 px-4 border-b text-left text-sm font-medium text-gray-700">Aisle Seat</th>
+            <th class="py-3 px-4 border-b text-left text-sm font-medium text-gray-700">Edit</th>
+            <th class="py-3 px-4 border-b text-left text-sm font-medium text-gray-700">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="booking : ${bookings}" class="even:bg-gray-50 hover:bg-gray-100">
+            <td class="py-3 px-4 border-b text-sm text-gray-700" th:text="${booking.id}">1</td>
+            <td class="py-3 px-4 border-b text-sm text-gray-700" th:text="${booking.flightId}">1</td>
+            <td class="py-3 px-4 border-b text-sm text-gray-700" th:text="${booking.userId}">1</td>
+            <td class="py-3 px-4 border-b text-sm text-gray-700" th:text="${booking.bookingDate}">2024-07-01T10:00:00</td>
+            <td class="py-3 px-4 border-b text-sm text-gray-700" th:text="${booking.status}">CONFIRMED</td>
+            <td class="py-3 px-4 border-b text-sm text-gray-700" th:text="${booking.seatNumber}">12A</td>
+            <td class="py-3 px-4 border-b text-sm text-gray-700" th:text="${booking.isAisleSeat ? 'Yes' : 'No'}">Yes</td>
+            <td class="py-3 px-4 border-b text-sm text-gray-700"><a class="text-blue-500 hover:text-blue-700" th:href="@{/web/bookings/{id}/edit(id=${booking.id})}">Edit</a></td>
+            <td class="py-3 px-4 border-b text-sm text-gray-700"><a class="text-blue-500 hover:text-red-700" th:href="@{/web/booking/delete/{id}(id=${booking.id})}">Delete</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
