@@ -71,7 +71,7 @@
 <body>
 <div class="container">
     <h1>Edit User</h1>
-    <form th:action="@{/users/{id}(id=${user.id})}" th:object="${user}" th:method="post">
+    <form th:action="@{/web/users/{id}/update(id=${user.id})}" th:object="${user}" th:method="post">
         <div class="form-group">
             <label for="id">ID:</label>
             <input type="text" id="id" th:field="*{id}" readonly>
