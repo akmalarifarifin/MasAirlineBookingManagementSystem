@@ -39,14 +39,49 @@
 <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md form-container">
     <h1 class="text-3xl font-semibold text-center text-gray-800 mb-8">Create Booking</h1>
     <form th:action="@{/bookingnew}" th:method="post" class="space-y-6">
+        <input type="hidden" name="flightId" th:value="${flight.id}">
+        <input type="hidden" name="userId" th:value="${user.id}">
+
         <div class="form-group">
-            <label for="flightId" class="block text-sm font-medium text-gray-700">Flight ID:</label>
-            <input type="number" id="flightId" name="flightId" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" th:value="${param.flightId}">
+            <label class="block text-sm font-medium text-gray-700">Flight ID:</label>
+            <div class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-100">
+                <span th:text="${flight.id}">12345</span>
+            </div>
         </div>
 
         <div class="form-group">
-            <label for="userId" class="block text-sm font-medium text-gray-700">User ID:</label>
-            <input type="number" id="userId" name="userId" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+            <label class="block text-sm font-medium text-gray-700">User:</label>
+            <div class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-100">
+                <span th:text="${user.id}">1</span> - <span th:text="${user.name}">John Doe</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="block text-sm font-medium text-gray-700">Origin:</label>
+            <div class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-100">
+                <span th:text="${flight.origin}">New York</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="block text-sm font-medium text-gray-700">Destination:</label>
+            <div class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-100">
+                <span th:text="${flight.destination}">Los Angeles</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="block text-sm font-medium text-gray-700">Departure Time:</label>
+            <div class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-100">
+                <span th:text="${flight.departureTime}">2023-06-30T10:00</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="block text-sm font-medium text-gray-700">Arrival Time:</label>
+            <div class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-100">
+                <span th:text="${flight.arrivalTime}">2023-06-30T14:00</span>
+            </div>
         </div>
 
         <div class="form-group">

@@ -1,6 +1,5 @@
 package com.example.MasAirlineBookingManagementSystem.Controller;
 
-import com.example.MasAirlineBookingManagementSystem.Model.Booking;
 import com.example.MasAirlineBookingManagementSystem.Model.Flight;
 import com.example.MasAirlineBookingManagementSystem.Service.FlightService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,28 +17,34 @@ public class FlightController {
     private FlightService flightService;
 
     @GetMapping
-    public List<Flight> getAllFlights() {
-        return flightService.getAllFlights();
+    public String getAllFlights(Model model) {
+        List<Flight> flights = flightService.getAllFlights();
+        model.addAttribute("flights", flights);
+        return "flightList";
     }
 
     @GetMapping("/{id}")
+    @ResponseBody
     public Flight getFlightById(@PathVariable Long id) {
         return flightService.getFlightById(id);
     }
 
     @PostMapping
+    @ResponseBody
     public Flight addFlight(@RequestBody Flight flight) {
         return flightService.addFlight(flight);
     }
 
     @PutMapping("/{id}")
+    @ResponseBody
     public Flight updateFlight(@PathVariable Long id, @RequestBody Flight flight) {
         return flightService.updateFlight(id, flight);
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteFlight(@PathVariable Long id) {
+    @PostMapping("/delete/{id}")
+    public String deleteFlight(@PathVariable Long id) {
         flightService.deleteFlight(id);
+        return "redirect:/flights";
     }
 
     @GetMapping("/new")
@@ -58,8 +63,6 @@ public class FlightController {
     @PostMapping("/new")
     public String createFlight(@ModelAttribute Flight flight, Model model) {
         flightService.createFlight(flight);
-        //nnti linkkan ke flight list
-        return "redirect:/flights/new";
+        return "redirect:/flights";
     }
-
 }
