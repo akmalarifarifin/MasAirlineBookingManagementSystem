@@ -4,7 +4,6 @@ import com.example.MasAirlineBookingManagementSystem.Model.User;
 import com.example.MasAirlineBookingManagementSystem.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -22,13 +21,17 @@ public class UserService {
         return userRepository.findById(id).orElse(null);
     }
 
-    @PostMapping
+    public User getUserByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
+    public User getUserByEmailAndPassword(String email, String password) {
+        return userRepository.findByEmailAndPassword(email, password);
+    }
+
+
     public User createUser(User user) {
-        if (user != null) {
-            return userRepository.save(user);
-        } else {
-            throw new IllegalArgumentException("User cannot be null");
-        }
+        return userRepository.save(user);
     }
 
     public User updateUser(Long id, User updatedUser) {
