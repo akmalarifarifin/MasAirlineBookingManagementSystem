@@ -42,16 +42,16 @@ public class DataLoader {
     }
 
     private void loadFlights() {
-        flightRepository.save(new Flight(null, "MH100", "Kuala Lumpur", "Singapore", LocalDateTime.of(2024, 7, 1, 8, 0), LocalDateTime.of(2024, 7, 1, 10, 0), 180, 150));
-        flightRepository.save(new Flight(null, "MH101", "Kuala Lumpur", "Bangkok", LocalDateTime.of(2024, 7, 1, 9, 0), LocalDateTime.of(2024, 7, 1, 11, 0), 200, 180));
-        flightRepository.save(new Flight(null, "MH102", "Kuala Lumpur", "Jakarta", LocalDateTime.of(2024, 7, 1, 10, 0), LocalDateTime.of(2024, 7, 1, 12, 0), 220, 200));
-        flightRepository.save(new Flight(null, "MH103", "Kuala Lumpur", "Manila", LocalDateTime.of(2024, 7, 1, 11, 0), LocalDateTime.of(2024, 7, 1, 14, 0), 180, 150));
-        flightRepository.save(new Flight(null, "MH104", "Kuala Lumpur", "Hanoi", LocalDateTime.of(2024, 7, 1, 12, 0), LocalDateTime.of(2024, 7, 1, 14, 0), 200, 180));
-        flightRepository.save(new Flight(null, "MH105", "Kuala Lumpur", "Ho Chi Minh City", LocalDateTime.of(2024, 7, 1, 13, 0), LocalDateTime.of(2024, 7, 1, 15, 0), 220, 200));
-        flightRepository.save(new Flight(null, "MH106", "Kuala Lumpur", "Phnom Penh", LocalDateTime.of(2024, 7, 1, 14, 0), LocalDateTime.of(2024, 7, 1, 16, 0), 180, 150));
-        flightRepository.save(new Flight(null, "MH107", "Kuala Lumpur", "Siem Reap", LocalDateTime.of(2024, 7, 1, 15, 0), LocalDateTime.of(2024, 7, 1, 17, 0), 200, 180));
-        flightRepository.save(new Flight(null, "MH108", "Kuala Lumpur", "Yangon", LocalDateTime.of(2024, 7, 1, 16, 0), LocalDateTime.of(2024, 7, 1, 18, 0), 220, 200));
-        flightRepository.save(new Flight(null, "MH109", "Kuala Lumpur", "Vientiane", LocalDateTime.of(2024, 7, 1, 17, 0), LocalDateTime.of(2024, 7, 1, 19, 0), 180, 150));
+        flightRepository.save(new Flight(null, "MH100", "Kuala Lumpur", "Singapore", LocalDateTime.of(2024, 7, 1, 8, 0), LocalDateTime.of(2024, 7, 1, 10, 0), 180, 150,"https://focusmalaysia.my/wp-content/uploads/Singapore-AFP-Getty-Images.jpg"));
+        flightRepository.save(new Flight(null, "MH101", "Kuala Lumpur", "Bangkok", LocalDateTime.of(2024, 7, 1, 9, 0), LocalDateTime.of(2024, 7, 1, 11, 0), 200, 180,"https://cdn.britannica.com/57/20057-004-404C9F85/Grand-Palace-Bangkok-Thailand.jpg"));
+        flightRepository.save(new Flight(null, "MH102", "Kuala Lumpur", "Jakarta", LocalDateTime.of(2024, 7, 1, 10, 0), LocalDateTime.of(2024, 7, 1, 12, 0), 220, 200,"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Busway_in_Bundaran_HI.jpg/1200px-Busway_in_Bundaran_HI.jpg"));
+        flightRepository.save(new Flight(null, "MH103", "Kuala Lumpur", "Manila", LocalDateTime.of(2024, 7, 1, 11, 0), LocalDateTime.of(2024, 7, 1, 14, 0), 180, 150,"https://cdn.britannica.com/81/196781-050-CA29F2C8/Manila.jpg"));
+        flightRepository.save(new Flight(null, "MH104", "Kuala Lumpur", "Hanoi", LocalDateTime.of(2024, 7, 1, 12, 0), LocalDateTime.of(2024, 7, 1, 14, 0), 200, 180,"https://content.r9cdn.net/rimg/dimg/9f/f9/b80f2b97-city-34211-1648f9bdee7.jpg?width=1366&height=768&xhint=1744&yhint=910&crop=true"));
+        flightRepository.save(new Flight(null, "MH105", "Kuala Lumpur", "Ho Chi Minh City", LocalDateTime.of(2024, 7, 1, 13, 0), LocalDateTime.of(2024, 7, 1, 15, 0), 220, 200,"https://authentiktravel.com/media/blog/visit-ho-chi-minh-city-in-1-2-or-3-days-guide.jpg"));
+        flightRepository.save(new Flight(null, "MH106", "Kuala Lumpur", "Phnom Penh", LocalDateTime.of(2024, 7, 1, 14, 0), LocalDateTime.of(2024, 7, 1, 16, 0), 180, 150,"https://media-cdn.tripadvisor.com/media/photo-c/1280x250/10/e4/ce/b1/20171006-093816-01-largejpg.jpg"));
+        flightRepository.save(new Flight(null, "MH107", "Kuala Lumpur", "Siem Reap", LocalDateTime.of(2024, 7, 1, 15, 0), LocalDateTime.of(2024, 7, 1, 17, 0), 200, 180,"https://i.natgeofe.com/n/fdbadebb-1db9-41a9-9ac6-e7ee41f199aa/ta-prohm-siem-reap-cambodia_4x3.jpg"));
+        flightRepository.save(new Flight(null, "MH108", "Kuala Lumpur", "Yangon", LocalDateTime.of(2024, 7, 1, 16, 0), LocalDateTime.of(2024, 7, 1, 18, 0), 220, 200,"https://cdn.i-scmp.com/sites/default/files/d8/images/methode/2019/07/12/7780b5d8-a15b-11e9-9a3c-98259c87fba2_image_hires_173133.jpg"));
+        flightRepository.save(new Flight(null, "MH109", "Kuala Lumpur", "Vientiane", LocalDateTime.of(2024, 7, 1, 17, 0), LocalDateTime.of(2024, 7, 1, 19, 0), 180, 150,"https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Vientiane_-_Patuxai_-_0003.jpg/800px-Vientiane_-_Patuxai_-_0003.jpg"));
     }
 
     private void loadUsers() {

@@ -80,8 +80,9 @@ public class UserController {
 
     @GetMapping("/logout")
     public String logoutUser(HttpSession session) {
-        session.invalidate();
-        return "redirect:/login";
+        session.invalidate(); // Invalidate the session
+        return "redirect:/users/login"; // Redirect to the login page
     }
+
 
 }

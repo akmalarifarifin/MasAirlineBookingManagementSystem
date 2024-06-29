@@ -25,4 +25,5 @@ public class Flight {
     private LocalDateTime arrivalTime;
     private int totalSeats;
     private int availableSeats;
+    private String imageUrl; // Add this line
 }

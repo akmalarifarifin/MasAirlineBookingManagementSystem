@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Home Page</title>
+    <title>Main Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
@@ -9,22 +9,33 @@
         body {
             font-family: 'Poppins', sans-serif;
         }
-
     </style>
 </head>
-<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4">
-<h1 class="text-4xl font-bold text-gray-800 mb-12">Welcome to Mas Booking Management System</h1>
-<div class="space-y-4 w-full max-w-sm">
-    <a href="/home" class="block w-full py-2 px-4 bg-blue-500 text-white text-center font-medium rounded-md shadow-sm border border-blue-500 hover:bg-blue-600 transition duration-200">
-        Pick a Flight
-    </a>
-    <a href="/web/bookings/new" class="block w-full py-2 px-4 bg-blue-500 text-white text-center font-medium rounded-md shadow-sm border border-blue-500 hover:bg-blue-600 transition duration-200">
-        Create Booking
-    </a>
-    <a href="/web/bookings" class="block w-full py-2 px-4 bg-blue-500 text-white text-center font-medium rounded-md shadow-sm border border-blue-500 hover:bg-blue-600 transition duration-200">
-        Edit Booking
-    </a>
-</div>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+<div class="w-full max-w-md">
+    <div th:if="${error}" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-6" role="alert">
+        <strong class="font-bold">Error!</strong>
+        <span class="block sm:inline" th:text="${error}">Access Denied: Please log in first.</span>
+    </div>
 
+    <div th:unless="${error}" class="text-center">
+        <h1 class="text-4xl font-bold text-gray-800 mb-12">Welcome to Mas Booking Management System</h1>
+        <div class="space-y-4">
+            <a href="/home" class="block w-full py-2 px-4 bg-blue-500 text-white text-center font-medium rounded-md shadow-sm border border-blue-500 hover:bg-blue-600 transition duration-200">
+                Pick a Flight
+            </a>
+            <a href="/web/bookings/new" class="block w-full py-2 px-4 bg-blue-500 text-white text-center font-medium rounded-md shadow-sm border border-blue-500 hover:bg-blue-600 transition duration-200">
+                Create Booking
+            </a>
+            <a href="/web/bookings" class="block w-full py-2 px-4 bg-blue-500 text-white text-center font-medium rounded-md shadow-sm border border-blue-500 hover:bg-blue-600 transition duration-200">
+                Edit Booking
+            </a>
+            <!-- Logout Link -->
+            <a href="/users/logout" class="block w-full py-2 px-4 bg-red-500 text-white text-center font-medium rounded-md shadow-sm border border-red-500 hover:bg-red-600 transition duration-200">
+                Logout
+            </a>
+        </div>
+    </div>
+</div>
 </body>
 </html>

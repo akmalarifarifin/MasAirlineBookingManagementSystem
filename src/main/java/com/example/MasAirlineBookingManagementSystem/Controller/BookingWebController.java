@@ -2,8 +2,10 @@ package com.example.MasAirlineBookingManagementSystem.Controller;
 
 import com.example.MasAirlineBookingManagementSystem.Model.Booking;
 import com.example.MasAirlineBookingManagementSystem.Model.Flight;
+import com.example.MasAirlineBookingManagementSystem.Model.User;
 import com.example.MasAirlineBookingManagementSystem.Service.BookingService;
 import com.example.MasAirlineBookingManagementSystem.Service.FlightService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -63,7 +65,12 @@ public class BookingWebController {
     }
 
     @GetMapping("/main-page")
-    public String showMainPage() {
+    public String showMainPage(HttpSession session, Model model) {
+        User user = (User) session.getAttribute("user");
+        if (user == null) {
+            model.addAttribute("error", "Access Denied: Please log in first.");
+            return "access-denied";
+        }
         return "mainUserPage";
     }
 }
